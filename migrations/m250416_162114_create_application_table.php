@@ -22,8 +22,8 @@ class m250416_162114_create_application_table extends Migration
             'description' => $this->text(),
             'income' => $this->decimal(),
             'number_of_dependants' => $this->integer(),
-            'created_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
-            'updated_at' => $this->timestamp(),
+            'created_at' => $this->bigInteger()->defaultExpression('(UNIX_TIMESTAMP())'),
+            'updated_at' => $this->bigInteger(),
         ]);
     }
 
